@@ -17,6 +17,8 @@ dependencies:
   shimmer: ^3.0.0
   lottie: ^2.7.0
 
+
+
   # State Management
   provider: ^6.1.1
 
@@ -35,5 +37,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/animations/
-    - assets/images/
+    - assets/icons/
