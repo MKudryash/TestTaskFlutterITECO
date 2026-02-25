@@ -17,7 +17,7 @@ dependencies:
   shimmer: ^3.0.0
   lottie: ^2.7.0
 
-
+  shared_preferences: ^2.2.2
 
   # State Management
   provider: ^6.1.1

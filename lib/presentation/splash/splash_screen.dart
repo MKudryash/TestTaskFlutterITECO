@@ -52,7 +52,7 @@ class SplashScreen extends StatelessWidget {
                             'assets/icons/man.svg',
                             width: 100 * value,
                             height: 100 * value,
-                              color: const Color(0xFFF0F4F8),
+                            color: const Color(0xFFF0F4F8),
                           ),
                         ),
                         const SizedBox(height: 20),

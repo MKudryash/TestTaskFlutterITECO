@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashViewModel extends ChangeNotifier {
-  void navigateToNext(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(const Duration(seconds: 2), () {
-        if (context.mounted) {
-          final hasSeenOnboarding = false;
+  static const String _onboardingKey = 'onboarding_seen';
 
-          if (hasSeenOnboarding) {
+  Future<void> navigateToNext(BuildContext context) async {
+    await Future.delayed(const Duration(seconds: 2));
 
-          } else {
-            Navigator.pushReplacementNamed(context, '/onboarding');
-          }
-        }
-      });
-    });
+    if (!context.mounted) return;
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final hasSeenOnboarding = prefs.getBool(_onboardingKey) ?? false;
+
+      if (hasSeenOnboarding) {
+        Navigator.pushReplacementNamed(context, '/feed');
+      } else {
+        Navigator.pushReplacementNamed(context, '/onboarding');
+      }
+    } catch (e) {
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(context, '/onboarding');
+      }
+    }
   }
 }

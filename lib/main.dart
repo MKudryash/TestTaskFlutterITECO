@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_task/presentation/feed/feed_screen.dart';
 import 'package:test_task/presentation/onboarding/onboarding_screen.dart';
 import 'package:test_task/presentation/splash/splash_screen.dart';
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const SplashScreen(),
           '/onboarding': (context) => const OnboardingScreen(),
+          '/feed': (context) => const FeedScreen(),
       }
     );
   }

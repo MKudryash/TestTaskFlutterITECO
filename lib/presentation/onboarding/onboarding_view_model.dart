@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardingViewModel extends ChangeNotifier {
   final PageController pageController = PageController();
   int currentPage = 0;
+
+  static const String _onboardingKey = 'onboarding_seen';
 
   final List<OnboardingPageData> pages = [
     OnboardingPageData(
@@ -42,8 +45,30 @@ class OnboardingViewModel extends ChangeNotifier {
     }
   }
 
-  void completeOnboarding(BuildContext context) {
+  Future<void> completeOnboarding(BuildContext context) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool(_onboardingKey, true);
 
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(context, '/feed');
+      }
+    } catch (e) {
+      debugPrint('$e');
+
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(context, '/feed');
+      }
+    }
+  }
+
+  Future<void> resetOnboardingStatus() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(_onboardingKey);
+    } catch (e) {
+      debugPrint('$e');
+    }
   }
 }
 
