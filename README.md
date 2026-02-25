@@ -1,17 +1,96 @@
-# test_task
+# Test Task - Flutter Mobile Application
+Мобильное приложение на Flutter, разработанное в качестве тестового задания. Приложение включает в себя экран загрузки, онбординг и бесконечную ленту товаров с подгрузкой данных из FakeStoreAPI.
 
-A Flutter app with Clean Architecture
+## Содержание
+- [Описание проекта](#описание-проекта)
+- [Функциональность](#функциональность)
+- [Технологии](#технологии)
+- [Архитектура](#архитектура)
+- [Установка и запуск](#установка-и-запуск)
+- [Скриншоты](#скриншоты)
 
-## Getting Started
+## Описание проекта
 
-This project is a starting point for a Flutter application.
+Тестовое мобильное приложение, демонстрирующее навыки разработки на Flutter с использованием чистой архитектуры (Clean Architecture) и паттерна MVVM. Приложение загружает товары с открытого API FakeStoreAPI и представляет их в виде бесконечной ленты с возможностью подгрузки при прокрутке.
 
-A few resources to get you started if this is your first Flutter project:
+### Основные требования, реализованные в проекте:
+- Качество кода
+- Архитектура проекта
+- Анимации 
+- Cетевые запросы
+- Бесконечный скролл
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Функциональность
+
+### 1. Splash Screen (Экран загрузки)
+- Анимированный логотип с появлением
+- Градиентный фон
+- Автоматический переход после загрузки
+- Проверка статуса онбординга
+
+### 2. Onboarding (Экран приветствия)
+- 3 информационные страницы
+- Плавные анимации появления элементов
+- Индикатор текущей страницы
+- Кнопки "Пропустить" и "Далее"/"Начать"
+- Сохранение статуса просмотра (показывается только 1 раз)
+
+### 3. Feed (Лента товаров)
+- Бесконечная лента с подгрузкой товаров
+- Shimmer-эффект при загрузке
+- Анимированное появление карточек товаров
+- Обработка ошибок сети
+- Pull-to-refresh (обновление списка)
+- Детальная информация о товаре (изображение, название, цена, рейтинг)
+
+## Технологии
+
+- **Flutter** - основной фреймворк
+- **Dart** - язык программирования
+- **Provider** - управление состоянием (MVVM)
+- **Dio** - HTTP клиент для API запросов
+- **SharedPreferences** - хранение локальных данных
+- **smooth_page_indicator** - индикатор страниц онбординга
+- **flutter_svg** - работа с SVG иконками
+- **shimmer** - эффект загрузки
+
+## Архитектура
+
+Проект построен с использованием **Clean Architecture** и **MVVM** паттерна
+
+## Установка и запуск
+
+### Предварительные требования
+
+- Установленный Flutter SDK (версия 3.0.0 или выше)
+- Установленный Dart SDK (версия 3.0.0 или выше)
+- Android Studio / Xcode для эмулятора или физическое устройство
+
+### Пошаговая инструкция
+
+1. **Клонируйте репозиторий**
+   ```bash
+   git clone https://github.com/MKudryash/TestTaskFlutterITECO
+   cd test_task
+2. Установите зависимости
+    ```bash
+    flutter pub get
+3. Запустите приложение  
+   ```bash
+   # Для отладки
+   flutter run
+   # Для сборки APK (Android)
+   flutter build apk --release
+   # Для сборки IPA (iOS)
+   flutter build ios --release
+
+# Скриншоты
+
+Splash Screen
+<div align="center"> <img src="screenshots/splash.png" alt="Splash Screen" width="250"/> <p><em>Экран загрузки с анимированным логотипом</em></p> </div>
+Onboarding Screens
+<div align="center"> <table> <tr> <td><img src="screenshots/onboarding1.png" alt="Onboarding 1" width="200"/></td> <td><img src="screenshots/onboarding2.png" alt="Onboarding 2" width="200"/></td> <td><img src="screenshots/onboarding3.png" alt="Onboarding 3" width="200"/></td> </tr> </table> <p><em>Страницы онбординга с анимациями</em></p> </div>
+Feed Screen
+<div align="center"> <table> <tr> <td><img src="screenshots/feed.png" alt="Feed" width="200"/></td> </tr> </table> <p><em>Лента товаров (плохо загружает фото из-за интернета)</em></p> </div>        
+
