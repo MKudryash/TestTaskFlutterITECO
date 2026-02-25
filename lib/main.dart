@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_task/presentation/onboarding/onboarding_screen.dart';
 import 'package:test_task/presentation/splash/splash_screen.dart';
 
 void main() {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       ),
         initialRoute: '/',
         routes: {
-          '/': (context) => const SplashScreen()
+          '/': (context) => const SplashScreen(),
+          '/onboarding': (context) => const OnboardingScreen(),
       }
     );
   }

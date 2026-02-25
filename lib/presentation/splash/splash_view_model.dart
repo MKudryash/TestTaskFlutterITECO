@@ -2,9 +2,18 @@ import 'package:flutter/material.dart';
 
 class SplashViewModel extends ChangeNotifier {
   void navigateToNext(BuildContext context) {
-    Future.delayed(const Duration(seconds: 2), () {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(seconds: 2), () {
+        if (context.mounted) {
+          final hasSeenOnboarding = false;
 
+          if (hasSeenOnboarding) {
+
+          } else {
+            Navigator.pushReplacementNamed(context, '/onboarding');
+          }
+        }
+      });
     });
   }
 }
-
