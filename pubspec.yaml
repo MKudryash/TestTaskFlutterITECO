@@ -1,0 +1,39 @@
+name: test_task
+description: "A Flutter app with Clean Architecture"
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI
+  smooth_page_indicator: ^1.1.0
+  flutter_svg: ^2.0.9
+  shimmer: ^3.0.0
+  lottie: ^2.7.0
+
+  # State Management
+  provider: ^6.1.1
+
+  # Networking
+  dio: ^5.4.0
+
+  # Utils
+  equatable: ^2.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/animations/
+    - assets/images/
