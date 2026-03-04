@@ -1,6 +1,5 @@
 name: test_task
-description: "A Flutter app with Clean Architecture"
-
+description: A test task application
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -11,30 +10,45 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # UI
-  smooth_page_indicator: ^1.1.0
   flutter_svg: ^2.0.9
-  shimmer: ^3.0.0
-  lottie: ^2.7.0
+  smooth_page_indicator: ^1.1.0
+
+  provider: ^6.1.1
+
+  dio: ^5.4.0
+
 
   shared_preferences: ^2.2.2
 
-  # State Management
-  provider: ^6.1.1
 
-  # Networking
-  dio: ^5.4.0
-
-  # Utils
-  equatable: ^2.0.5
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.1
-
+  flutter_native_splash: ^2.4.4
 flutter:
   uses-material-design: true
 
   assets:
     - assets/icons/
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+
+flutter_native_splash:
+  color: "#2C3646"
+  image: assets/icons/bag.png
+
+  android_12:
+    image: assets/icons/bag.png
+    color: "#2C3646"
+
+  android: true
+  ios: true
+  fullscreen: false

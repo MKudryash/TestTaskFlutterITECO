@@ -7,7 +7,7 @@ class ProductEntity {
   final String image;
   final RatingEntity rating;
 
-  ProductEntity({
+  const ProductEntity({
     required this.id,
     required this.title,
     required this.price,
@@ -22,9 +22,8 @@ class RatingEntity {
   final double rate;
   final int count;
 
-  RatingEntity({
+  const RatingEntity({
     required this.rate,
     required this.count,
   });
 }
-

@@ -1,5 +1,11 @@
+
+import 'package:dartz/dartz.dart';
+
 import '../entities/product_entity.dart';
 
 abstract class IProductRepository {
-  Future<List<ProductEntity>> getProducts({int limit = 10, int offset = 0});
+  Future<Either<String, List<ProductEntity>>> getProducts({
+    required int limit,
+    required int offset,
+  });
 }
